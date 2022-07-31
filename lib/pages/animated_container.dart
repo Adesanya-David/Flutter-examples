@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Box extends StatefulWidget {
-  const Box({ Key? key }) : super(key: key);
+  const Box({Key? key}) : super(key: key);
 
   @override
   _BoxState createState() => _BoxState();
@@ -24,7 +24,7 @@ class _BoxState extends State<Box> with SingleTickerProviderStateMixin {
         if (_controller.value <= 0.1) {
           width = 180;
           height = 170;
-        } else if(_controller.value <= 0.3) {
+        } else if (_controller.value <= 0.3) {
           width = 50;
           height = 50;
         } else if (_controller.value <= 0.5) {
@@ -38,7 +38,7 @@ class _BoxState extends State<Box> with SingleTickerProviderStateMixin {
           height = 50;
         }
       });
-     });
+    });
     super.initState();
   }
 
@@ -64,11 +64,11 @@ class _BoxState extends State<Box> with SingleTickerProviderStateMixin {
             ),
           ),
           SizedBox(height: 50),
-          RaisedButton(
+          ElevatedButton(
             child: Text("go"),
             onPressed: () => _controller.forward(),
           ),
-          RaisedButton(
+          ElevatedButton(
             child: Text("stop"),
             onPressed: () => _controller.reset(),
           ),

@@ -1,40 +1,38 @@
+// ignore_for_file: unused_field, unused_element
+
 import 'package:flutter/material.dart';
 import 'package:flutter_youtube_view/flutter_youtube_view.dart';
 
 class PlayVideoExample extends StatefulWidget {
-  const PlayVideoExample({ Key? key }) : super(key: key);
+  const PlayVideoExample({Key? key}) : super(key: key);
 
   @override
   _PlayVideoExampleState createState() => _PlayVideoExampleState();
 }
 
 class _PlayVideoExampleState extends State<PlayVideoExample>
- implements YouTubePlayerListener {
-  
+    implements YouTubePlayerListener {
   double _currentVideoSecond = 0.0;
   String _playerState = "";
   late FlutterYoutubeViewController _controller;
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack (
-        children: <Widget>[
-          Container(
-            child: FlutterYoutubeView(
-            onViewCreated: _onYoutubeCreated,
-            listener: this,
-            params: YoutubeParam(
-              videoId: 'dhKRflZUicU',
-              showUI: true,
-              startSeconds: 0,
-              showYoutube: false,
-              showFullScreen: true,
-            ),
-          )),
-        ]
-      )
-    );
+        body: Stack(children: <Widget>[
+      Container(
+          child: FlutterYoutubeView(
+        onViewCreated: _onYoutubeCreated,
+        listener: this,
+        params: YoutubeParam(
+          videoId: 'dhKRflZUicU',
+          showUI: true,
+          startSeconds: 0,
+          showYoutube: false,
+          showFullScreen: true,
+        ),
+      )),
+    ]));
   }
 
   @override
